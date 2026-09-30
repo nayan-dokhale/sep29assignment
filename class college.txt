@@ -1,0 +1,47 @@
+class address:
+    def __init__(self,city,pincode):
+        self.city = city
+        self.pincode = pincode
+
+class  student:
+    def __init__(self,roll_number,name,marks,address):
+        self.roll_number = roll_number
+        self.name = name
+        self.marks = marks
+        self.address = address
+
+class teacher:
+    def __init__(self,name,salary,dep,address):
+        self.name = name 
+        self.salary = salary
+        self.dep = dep
+        self.address = address
+
+class college:
+    def __init__(self,teacher,student):
+        self.teacher = teacher
+        self.student = student
+
+student_addr = address("pune",411008)
+teacher_addr = address("mumbai",411009)
+
+stu1 = student(21,"Nayan",80,student_addr)
+teacher1 = teacher("Rahul",50000,"AIML",teacher_addr)
+
+college1 = college(teacher1,stu1)
+
+print("Student details:")
+print("Roll number:", college1.student.roll_number)
+print("Name:",college1.student.name)
+print("Marks:",college1.student.marks)
+print("City:",college1.student.address.city)
+print("Pincode:",college1.student.address.pincode)
+
+print()
+
+print("Teacher details:")
+print("Name:",college1.teacher.name)
+print("Salary:",college1.teacher.salary)
+print("Department:",college1.teacher.dep)
+print("City:",college1.teacher.address.city)
+print("Pincode:",college1.teacher.address.pincode)
